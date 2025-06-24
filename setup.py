@@ -1,16 +1,14 @@
-# debugger/setup.py
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name="debugger-tools",
-    version="0.1.0",
-    packages=find_packages(),
+    version="0.1.1",  # Bumped version
+    py_modules=["debug_server"],  # Point to single module
     entry_points={
         "console_scripts": [
-            "start-debug-server=debugger.server:main"
+            "start-debug-server=debug_server:run_server"
         ]
     },
-    install_requires=[],
-    description="Debugging utilities for sandbox environments",
-    long_description="Helper tools for debugging and monitoring applications",
+    install_requires=[],  # No dependencies
+    python_requires=">=3.6",
 )
